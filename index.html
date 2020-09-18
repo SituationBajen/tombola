@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <title>Bajentombola</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <img id="fullscreen" id="fullscreen" src="fullscreen.svg" />
+
+  <div id="inputswrapper">
+    <div id="quantitywrapper">
+      Antal biljetter:<br />
+      <input id="quantity" value="250" autocomplete="off" />
+    </div>
+    <div id="codewrapper">
+      Kod:<br />
+      <input id="code" autocomplete="off" />
+    </div>
+  </div>
+
+  <div id="loader">Fördelar...</div>
+
+  <div id="resultwrapper">
+    <div id="result"></div>
+  </div>
+
+  <script type="module" src="./javascript.js"></script>
+</body>
+
+</html>
