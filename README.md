@@ -25,7 +25,7 @@ Som algoritm för pseudoslump använder vi PBKDF2, som är gjort för att genere
 
 * Det finns en standardimplementation av PBKDF2 i Web Crypto API, så vi behöver inte själva implementera den, utan den finns redan som standard i moderna webbläsare.
 * Den slumpade koden som vi kommer att utgå ifrån har en entropi som motsvarar ett normalt lösenord, så det är en algoritm som är gjord för den typen av indata. Se denna jämförelse av algoritmer som stöds i Web Crypto API: [Supported algorithms](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveKey#Supported_algorithms).
-* De genererade nycklarna skapas genom SHA-1 som har en hög hash distribution, och ger därför en rättvis chans för alla säsongskort att bli utvalda.
+* Eftersom att PBKDF2 är gjort för att generera starka kryptografiska nycklar, så är det en mycket hög distribution i värdena som vi får ut, och ger därför extremt låg förutsägbarhet och en rättvis chans för alla säsongskort att bli utvalda.
 
 
 ## Några kodprinciper
