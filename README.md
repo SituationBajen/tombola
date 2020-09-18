@@ -37,3 +37,9 @@ Som algoritm för pseudoslump använder vi PBKDF2, som är gjort för att genere
 ## Tester
 
 Det finns några tester i `tests.html` och `tests.js`. Dessa är tänkta att köras direkt i webbläsaren, eftersom att vår implementation är så beroende av webbläsarnas Web Crypto API. Öppna webbläsarens inspektor för att se om det är några fel.
+
+## Bygg och deploy
+
+Något bygge behövs inte. Filerna kan hostas direkt som statiska filer på standardiserad webbserver.
+
+
