@@ -34,6 +34,10 @@ Som algoritm för pseudoslump använder vi PBKDF2, som är gjort för att genere
 * Inga dolda delar i något backend som körs. Allt är helt frontend för att koden enkelt ska kunna granskas och testas i vilken webbläsare som helst.
 * Vi publicerar koden öppet på typ GitHub.
 
+## Utvecklingsmiljö
+
+Observera att Web Crypto API är inte tillgängligt i alla webbläsare om inte sidan laddat via antingen HTTPS eller från 127.0.0.1, och i sådana fall så klagar den på att `window.crypto.subtle is undefined` när tombolan ska starta.
+
 ## Tester
 
 Det finns några tester i `tests.html` och `tests.js`. Dessa är tänkta att köras direkt i webbläsaren, eftersom att vår implementation är så beroende av webbläsarnas Web Crypto API. Öppna webbläsarens inspektor för att se om det är några fel.
