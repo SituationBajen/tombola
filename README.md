@@ -33,7 +33,7 @@ Som algoritm för pseudoslump använder vi PBKDF2, som är gjort för att genere
 * Vi vill köra exakt den kod som är skriven. Vi vill alltså inte ha någon oläslig kompilerad eller transpilerad kod. Detta för maximal transparens, så att det inte är några tveksamheter kring exakt vilken kodbas som körs.
 * Inga dolda delar i något backend som körs. Allt är helt frontend för att koden enkelt ska kunna granskas och testas i vilken webbläsare som helst.
 * Vi publicerar koden öppet på typ GitHub.
-* Vi bemödar oss inte med browserkompatibilitetsgrejer. Tombolan rullar i senaste Chrome, Firefox och Safari.
+* Vi bemödar oss inte med browserkompatibilitetsgrejer. Tombolan rullar i senaste Chrome, Firefox och Safari. Vi har inte heller lagt någon energi på mobilanpassning.
 
 ## Utvecklingsmiljö
 
