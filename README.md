@@ -49,5 +49,5 @@ Något bygge behövs inte. Filerna kan hostas direkt som statiska filer på stan
 
 ## Tack
 
-Tack för er tid, kodgranskning och värdefull feedback till [Alfred Godoy](https://twitter.com/kodfred), [Daniel Termin](https://twitter.com/botteu), [Jimmie Jonasson](https://github.com/jimmiejonasson), Jonas Nilsson, [Lisandro Mindel](https://www.linkedin.com/in/lisandromindel/), [Martin Moe](https://www.linkedin.com/in/martin-moe-44b02913a/) och [Stefan Parker](https://twitter.com/morkum).
+För nerlagd tid, kodgranskning, pull requests och värdefull feedback, stort tack till: [Alfred Godoy](https://twitter.com/kodfred), [Daniel Termin](https://twitter.com/botteu), [Fredrik Ljung](https://github.com/fredrikljung93), [Jimmie Jonasson](https://github.com/jimmiejonasson), Jonas Nilsson, [Lisandro Mindel](https://www.linkedin.com/in/lisandromindel/), [Martin Moe](https://www.linkedin.com/in/martin-moe-44b02913a/) och [Stefan Parker](https://twitter.com/morkum).
 
