@@ -98,6 +98,7 @@ h1 {
     padding: 20px;
     margin: 20px;
     column-count: 9;
+    column-width: 7em;
 }
 
 #result span {
