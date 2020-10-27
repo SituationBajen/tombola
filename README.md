@@ -47,7 +47,7 @@ Det finns några tester i `tests.html` och `tests.js`. Dessa är tänkta att kö
 
 Något bygge behövs inte. Filerna kan hostas direkt som statiska filer på standardiserad webbserver.
 
-## Credz
+## Tack
 
-Tack för er tid, kodgranskning och värdefull feedback till [Alfred Godoy](https://twitter.com/kodfred), [Daniel Termin](https://twitter.com/botteu), [Jimmie Jonasson](https://github.com/jimmiejonasson), Jonas Nilsson, [Lisandro Mindel](https://www.linkedin.com/in/lisandromindel/) och [Martin Moe](https://www.linkedin.com/in/martin-moe-44b02913a/).
+Tack för er tid, kodgranskning och värdefull feedback till [Alfred Godoy](https://twitter.com/kodfred), [Daniel Termin](https://twitter.com/botteu), [Jimmie Jonasson](https://github.com/jimmiejonasson), Jonas Nilsson, [Lisandro Mindel](https://www.linkedin.com/in/lisandromindel/), [Martin Moe](https://www.linkedin.com/in/martin-moe-44b02913a/) och [Stefan Parker](https://twitter.com/morkum).
 
