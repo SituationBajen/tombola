@@ -86,7 +86,7 @@ codeInputElem.addEventListener("keyup", async (event) => {
       if (quantityInputElem.disabled) {
 
         // Publish tombola result:
-        resultElem.innerHTML = "<span>" + matchTickets.sort().join("</span><span>") + "</span>";
+        resultElem.innerHTML = "<span>" + matchTickets.sort().join("</span> <span>") + "</span>";
 
         // Hide loader and show result:
         loaderElem.style.display = "none";
