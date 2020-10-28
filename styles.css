@@ -14,56 +14,54 @@ h1 {
 }
 
 #inputswrapper {
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
     text-align: center;
     color: #fff;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 10px;
     text-shadow: 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black;
     margin: 0 0 20px;
     padding: 20px 20px 0;
 }
 
-#quantitywrapper,
+#occasionwrapper,
 #codewrapper {
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
-#quantitywrapper {
-    flex-basis: 40%;
+#occasionwrapper {
+    margin-top: 50px;
 }
 
 #codewrapper {
-    margin-left: 20px;
+    margin-left: 0px;
+    margin-top: 20px;
 }
 
 #code {
-    width: 500px;
-}
-
-#quantity {
-    width: 300px;
-}
-
-#quantity,
-#code {
+    width: 140px;
+    text-transform: uppercase;
     text-align: center;
+}
+
+#occasion {
+    width: 320px;
+}
+
+#occasion,
+#code {
     font-weight: 700;
     color: #000;
-    text-align: center;
-    font-size: 60px;
-    text-transform: uppercase;
-    margin-left: 20px;
-    height: 80px;
+    font-size: 9px;
+    margin: 4px 0px 0px 0px;
+    padding: 0px 10px;
+    height: 30px;
     display: block;
     border-radius: 30px;
 }
 
-#inputswrapper input:disabled {
+#inputswrapper input:disabled,
+#inputswrapper select:disabled {
     background: rgba(255, 255, 255, 0.8);
     color: #aaa;
 }
@@ -89,6 +87,7 @@ h1 {
 
 #resultwrapper {
     display: none;
+    margin-top: 40px;
 }
 
 #result {
@@ -111,9 +110,77 @@ h1 {
     text-align: center;
     margin: 100px auto;
     display: none;
-    font-size: 100px;
+    font-size: 30px;
     color: #fff;
     font-weight: 700;
     text-shadow: 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black, 0 0 6px black;
 
+}
+
+@media screen and (min-width: 500px) {
+    #occasionwrapper {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #inputswrapper {
+        display: grid;
+        grid-template-columns: 360px auto;
+    }
+    #codewrapper {
+        margin-top: 0px;
+    }
+    #resultwrapper {
+        margin-top: 0px;
+    }
+
+}
+@media screen and (min-width: 820px) {
+    #inputswrapper {
+        grid-template-columns: 500px auto;
+    }
+    #occasion,
+    #code {
+        font-size: 15px;
+        height: 40px;
+    }
+    #code {
+        width: 200px;
+    }
+    #occasion {
+        width: 460px;
+    }
+}
+@media screen and (min-width: 1020px) {
+    #inputswrapper {
+        grid-template-columns: 620px auto;
+    }
+    #occasion,
+    #code {
+        font-size: 20px;
+        height: 55px;
+    }
+    #code {
+        width: 220px;
+    }
+    #occasion {
+        width: 580px;
+    }
+}
+@media screen and (min-width: 1220px) {
+    #inputswrapper {
+        grid-template-columns: 740px auto;
+    }
+    #occasion,
+    #code {
+        font-size: 25px;
+        height: 65px;
+    }
+    #code {
+        width: 250px;
+    }
+    #occasion {
+        width: 700px;
+    }
 }

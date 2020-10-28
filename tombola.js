@@ -13,6 +13,11 @@ import pseudoRand from "./pseudorand.js";
  */
 async function tombola(seasonTickets, code, quantity) {
 
+    // Just some debug data
+    // console.log("seasonTickets.length", seasonTickets.length);
+    // console.log("code", code);
+    // console.log("quantity", quantity);
+
     // Sort the season tickets and give each season ticket a pseudo-random value.
     // Sorting is important, since the array positions of the tickets affects the pseudoRand() result.
     const ticketsWithRandomCode = await Promise.all(

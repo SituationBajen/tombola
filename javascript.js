@@ -1,31 +1,30 @@
-// "pids" are the unique numbers representing the season tickets.
-// Each season ticket has a unique pid number.
-import pids from "./pids.js";
+// Info on the different lottery occasions:
+import occasions from "./occasions.js";
 
 // The tombola function distributing match tickets.
 import tombola from "./tombola.js";
 
 const fullscreenElem = document.getElementById("fullscreen");
-const quantityInputElem = document.getElementById("quantity");
+const occasionInputElem = document.getElementById("occasion");
 const codeInputElem = document.getElementById("code");
-const quantitywrapperInputElem = document.getElementById("quantitywrapper");
+const occasionwrapperInputElem = document.getElementById("occasionwrapper");
 const codewrapperInputElem = document.getElementById("codewrapper");
 const resultElem = document.getElementById("result");
 const resultWrapperElem = document.getElementById("resultwrapper");
 const loaderElem = document.getElementById("loader");
 
-quantitywrapperInputElem.addEventListener('click', () => {
+occasionwrapperInputElem.addEventListener('click', () => {
   loaderElem.style.display = "none";
   resultWrapperElem.style.display = "none";
-  quantityInputElem.disabled = false;
+  occasionInputElem.disabled = false;
   codeInputElem.disabled = false;
-  quantityInputElem.focus();
+  occasionInputElem.focus();
 });
 
 codewrapperInputElem.addEventListener('click', () => {
   loaderElem.style.display = "none";
   resultWrapperElem.style.display = "none";
-  quantityInputElem.disabled = false;
+  occasionInputElem.disabled = false;
   codeInputElem.disabled = false;
   codeInputElem.focus();
 });
@@ -41,11 +40,21 @@ fullscreenElem.addEventListener('click', () => {
   }
 });
 
-// Move focus to the code input field if pressing enter in the quantity input field:
-quantityInputElem.addEventListener("keyup", (event) => {
-  if (event.key === 'Enter') {
-    codeInputElem.focus();
-  }
+// Populate the occasion select element
+occasionInputElem.innerHTML =
+  occasions.map((item, index) => {
+    return `<option value="${index}">${item.name} - ${item.quantity} biljetter</option>`
+  });
+occasionInputElem.value = occasions.length - 1;
+
+// Returns the currently selected occasion
+function currentOccasion() {
+  return occasions[occasionInputElem.value];
+}
+
+// If choosing a historic occasion, then we populate the code box with the code that was drawn at the occasion:
+occasionInputElem.addEventListener("change", () => {
+  codeInputElem.value = currentOccasion().winningCode || "";
 });
 
 // Run the tombola if pressing enter in the code input field:
@@ -55,7 +64,8 @@ codeInputElem.addEventListener("keyup", async (event) => {
     event.preventDefault()
 
     // Get the quantity value. Remove all non-digits, if there are any.
-    const quantity = parseInt(quantityInputElem.value.replace(/[^0-9]/g, '')) || 0;
+    //const quantity = parseInt(quantityInputElem.value.replace(/[^0-9]/g, '')) || 0;
+    const quantity = currentOccasion().quantity;
 
     // Get the code value. Remove trailing whitespaces and make all chars upper case.
     const code = codeInputElem.value.toUpperCase().trim();
@@ -69,7 +79,7 @@ codeInputElem.addEventListener("keyup", async (event) => {
       }
 
       // Disable the input fields:
-      quantityInputElem.disabled = true;
+      occasionInputElem.disabled = true;
       codeInputElem.disabled = true;
 
       // Show loader:
@@ -79,11 +89,11 @@ codeInputElem.addEventListener("keyup", async (event) => {
       await new Promise(resolve => setTimeout(resolve, 50));
 
       // Run the tombola:
-      const matchTickets = await tombola(pids, code, quantity);
+      const matchTickets = await tombola(currentOccasion().pids, code, quantity);
 
       // If user clicked on the input fields while tombola was working, then we are in "input mode" again,
       // so dont show the results...
-      if (quantityInputElem.disabled) {
+      if (occasionInputElem.disabled) {
 
         // Publish tombola result:
         resultElem.innerHTML = "<span>" + matchTickets.sort().join("</span> <span>") + "</span>";
