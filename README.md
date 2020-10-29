@@ -39,6 +39,10 @@ Som algoritm för pseudoslump använder vi PBKDF2, som är gjort för att genere
 
 Observera att Web Crypto API är inte tillgängligt i alla webbläsare om inte sidan laddat via antingen HTTPS eller från 127.0.0.1, och i sådana fall så klagar den på att `window.crypto.subtle is undefined` när tombolan ska starta.
 
+### Cache busting
+
+Javascript-filerna har versionsnummer i filnamnen. Det är lite störigt att behöva sätta versionnummer överallt, men med ES6-moduler så kan man inte sätta en dynamisk cache bust typ `example.js?t=${new Date().getTime()}` funkar inte. `import` accepterar inte dynamiska urlar. Men det är OK med att sätta versionsnummer vid förändringar så länge repot är litet.
+
 ## Tester
 
 Det finns några tester i `tests.html` och `tests.js`. Dessa är tänkta att köras direkt i webbläsaren, eftersom att vår implementation är så beroende av webbläsarnas Web Crypto API. Öppna webbläsarens inspektor för att se om det är några fel.
