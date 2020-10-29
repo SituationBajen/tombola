@@ -1,8 +1,8 @@
 // Info on the different lottery occasions:
-import occasions from "./occasions.js";
+import occasions from "./occasions-1.0.1.js";
 
 // The tombola function distributing match tickets.
-import tombola from "./tombola.js";
+import tombola from "./tombola-1.0.1.js";
 
 const fullscreenElem = document.getElementById("fullscreen");
 const occasionInputElem = document.getElementById("occasion");

@@ -1,4 +1,4 @@
-import pseudoRand from "./pseudorand.js";
+import pseudoRand from "./pseudorand-1.0.1.js";
 
 /**
  * This function distributes match tickets to season ticket owners,
