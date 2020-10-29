@@ -1,6 +1,6 @@
-import occasions from './occasions.js';
-import pseudoRand from './pseudorand.js';
-import tombola from './tombola.js';
+import occasions from './occasions-1.0.1.js';
+import pseudoRand from './pseudorand-1.0.1.js';
+import tombola from './tombola-1.0.1.js';
 
 (async () => {
 
