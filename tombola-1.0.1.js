@@ -7,11 +7,12 @@ import pseudoRand from "./pseudorand-1.0.1.js";
  *   seasonTickets - Array with season ticket IDs (they are called "pids").
  *   code - String - A random code.
  *   quantity - Integer - The number of tickets wanted in the result.
+ *   substitutes - Integer - The number of substitute winners.
  * Returns:
  *   An array with the season ticket IDs that shall be assigned a match ticket.
  *   The array has the length given as quantity argument.
  */
-async function tombola(seasonTickets, code, quantity) {
+async function tombola(seasonTickets, code, quantity, substitutes) {
 
     // Just some debug data
     // console.log("seasonTickets.length", seasonTickets.length);
@@ -30,11 +31,14 @@ async function tombola(seasonTickets, code, quantity) {
     )
 
     // Now sort the tickets by the randomValue (i.e. the value from pseudoRand):
-    return ticketsWithRandomCode.sort((a, b) => a.randomValue < b.randomValue ? -1 : a.randomValue > b.randomValue ? 1 : 0)
-        // Only keep the quantity of tickets given as quantity argument:
-        .filter((_, index) => index < quantity)
+    const winnerOrder = ticketsWithRandomCode.sort((a, b) => a.randomValue < b.randomValue ? -1 : a.randomValue > b.randomValue ? 1 : 0)
         // Remove the randomValue, we only need to return the season ticket pids:
         .map(item => item.pid);
+    
+    return {
+        winners: winnerOrder.filter((_, index) => index < quantity),
+        substitutes: winnerOrder.filter((_, index) =>  index >= quantity && index < quantity + (substitutes || 0))
+    }
 }
 
 export default tombola;

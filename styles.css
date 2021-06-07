@@ -106,6 +106,26 @@ h1 {
     display: block;
 }
 
+#substitutesresult {
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    color: #000;
+    padding: 20px;
+    margin: 20px;
+    display: none;
+}
+
+#substitutesresultlist {
+    column-count: 7;
+    column-width: 9em;
+}
+
+#substitutesresult span {
+    width: 150px;   
+    margin: auto auto 2px;
+    display: block;
+}
+
 #loader {
     text-align: center;
     margin: 100px auto;
